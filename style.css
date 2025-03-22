@@ -142,25 +142,30 @@
 
   /* Navigation */
   .nav {
-    position: fixed;
+    position: absolute;
     top: 0;
     width: 100%;
     background: var(--nav-bg-light); /* Use CSS variable for background */
     padding: 1rem;
-    z-index: 1000;
+    z-index: 100;
   }
 
   .nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
+    display: flex; /* Ensures items stay in a horizontal row */
+    justify-content: center; /* Centers the items */
+    align-items: center; /* Aligns items vertically within the nav */
+    gap: 1rem; /* Adds spacing between items */
     list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap; /* Prevents items from wrapping to the next line */
   }
 
   .nav a {
     text-decoration: none;
     color: var(--text-light);
     font-weight: 600;
+    font-size: 1rem; /* Base font size */
     padding: 0.5rem 1rem;
   }
 
