@@ -263,7 +263,7 @@
   /* Form Container */
   .form-container {
     width: 100%;
-    max-width: 600px; /* Restrict form width for better appearance */
+    max-width: 100%; /* Restrict form width for better appearance */
     margin: 2rem auto; /* Center the form on the page */
     padding: 1.5rem;
     background: rgba(255, 255, 255, 0.9); /* Matches light theme */
