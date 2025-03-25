@@ -141,17 +141,19 @@
   }
 
   /* Navigation */
-  .nav {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    background: var(--nav-bg-light); /* Use CSS variable for background */
+.nav {
+    display: flex;
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
     padding: 1rem;
-    z-index: 100;
-  }
+    background: var(--nav-bg-light); /* Use CSS variable for background */
+    width: 100%;
+    box-sizing: border-box;
+}
 
-  .nav ul {
+.nav ul {
     display: flex; /* Ensures items stay in a horizontal row */
+    flex-wrap: wrap; /* Allows wrapping */
     justify-content: center; /* Centers the items */
     align-items: center; /* Aligns items vertically within the nav */
     gap: 1rem; /* Adds spacing between items */
@@ -159,15 +161,15 @@
     margin: 0;
     padding: 0;
     white-space: nowrap; /* Prevents items from wrapping to the next line */
-  }
+}
 
-  .nav a {
+.nav a {
     text-decoration: none;
     color: var(--text-light);
     font-weight: 600;
     font-size: 1rem; /* Base font size */
     padding: 0.5rem 1rem;
-  }
+}
 
   .nav a.active {
     color: var(--secondary-color);
@@ -195,7 +197,7 @@
     }
 
     .nav ul {
-      flex-direction: column; /* Stack navigation vertically */
+      flex-direction: row; /* Stack navigation vertically */
       gap: 0.5rem;
     }
 
