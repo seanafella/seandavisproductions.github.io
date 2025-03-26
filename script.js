@@ -9,13 +9,6 @@ themeToggle.addEventListener("click", () => {
     : '<i class="fas fa-moon"></i>';
 });
 
-// JavaScript code
-function toggleTheme() {
-    document.body.classList.toggle('dark-mode');
-}
-
-// Add event listener to the theme toggle button
-document.querySelector('.theme-toggle').addEventListener('click', toggleTheme);
 
 // Horizontal Slider Navigation
 document.querySelectorAll(".nav a").forEach((link) => {
