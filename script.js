@@ -9,10 +9,6 @@ themeToggle.addEventListener("click", () => {
     : '<i class="fas fa-moon"></i>';
 });
 
-document.getElementById("nav-toggle").addEventListener("click", function () {
-  document.getElementById("nav-menu").classList.toggle("active");
-});
-
 function toggleNavMenu() {
   const navMenu = document.getElementById("nav-menu");
   navMenu.classList.toggle("active");
@@ -47,8 +43,12 @@ navLinks.forEach((link) => {
         break;
     }
     console.log(`Slider transform: ${slider.style.transform}`);
+
+    // Ensure the navigation menu remains visible
+    const navMenu = document.getElementById("nav-menu");
+    navMenu.classList.add("active");
   });
 });
 
 // Ensure the nav menu is toggled correctly on small screens
-document.querySelector(".nav-toggle").addEventListener("click", toggleNavMenu);
+// document.querySelector(".nav-toggle").addEventListener("click", toggleNavMenu);
