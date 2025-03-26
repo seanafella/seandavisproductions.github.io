@@ -103,12 +103,13 @@
     backdrop-filter: blur(10px);
     max-width: 80%;
     margin: 0 auto;
-
     align-items: center; /* Vertically center items */
     display: flex;
     flex-wrap: wrap; /* Allows wrapping */
     justify-content: space-between; /* Aligns items */
     gap: 2rem; /* Space between sections */
+    overflow-y: auto; /* Add vertical scroll */
+    max-height: 80vh; /* Limit the height */
   }
 
   .slide {
@@ -342,6 +343,10 @@
 
     .nav a span {
       display: none;
+    }
+
+    .aboutMe-container {
+      max-height: 60vh; /* Adjust height for smaller screens */
     }
   }
 
