@@ -19,7 +19,7 @@
     <!-- Navigation -->
     <nav class="nav">
       <div class="nav-container">
-        <button id="nav-toggle" class="nav-toggle">
+        <button class="nav-toggle" id="nav-toggle">
           <i class="fas fa-bars"></i>
         </button>
         <ul id="nav-menu" class="nav-menu">
@@ -114,10 +114,10 @@
       <section id="contact" class="slide">
         <div class="content">
           <h3>Let's Connect</h3>
-          <form class="contact-form">
-            <input type="text" placeholder="Name" required />
-            <input type="email" placeholder="Email" required />
-            <textarea placeholder="Message" rows="5" required></textarea>
+            <form class="contact-form" action="https://formspree.io/f/xwplqgpo" method="POST" >
+            <input type="text" name="name" placeholder="Name" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <textarea name="message" placeholder="Message" rows="5" required></textarea>
             <button type="submit" class="cta-btn">Send Message</button>
           </form>
       
@@ -128,5 +128,22 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        console.log('DOM fully loaded and parsed');
+      });
+
+      const themeToggle = document.getElementById('theme-toggle');
+      themeToggle.addEventListener('click', () => {
+        console.log('Theme toggle clicked');
+        document.body.classList.toggle('dark-mode');
+      });
+
+      const navToggle = document.getElementById('nav-toggle');
+      navToggle.addEventListener('click', () => {
+        console.log('Navigation toggle clicked');
+        document.getElementById('nav-menu').classList.toggle('active');
+      });
+    </script>
   </body>
 </html>

@@ -13,18 +13,23 @@ document.getElementById("nav-toggle").addEventListener("click", function () {
   document.getElementById("nav-menu").classList.toggle("active");
 });
 
+function toggleNavMenu() {
+  const navMenu = document.getElementById("nav-menu");
+  navMenu.classList.toggle("active");
+}
+
 // Horizontal Slider Navigation
-document.querySelectorAll(".nav a").forEach((link) => {
+const navLinks = document.querySelectorAll(".nav a");
+navLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
     const target = link.getAttribute("href");
     const slider = document.querySelector(".slider-container");
 
     // Remove all active classes
-    document
-      .querySelectorAll(".nav a")
-      .forEach((a) => a.classList.remove("active"));
+    navLinks.forEach((a) => a.classList.remove("active"));
     link.classList.add("active");
+    console.log(`Active link: ${link.textContent}`);
 
     // Apply sliding animation
     switch (target) {
@@ -41,5 +46,9 @@ document.querySelectorAll(".nav a").forEach((link) => {
         slider.style.transform = "translateX(-300vw)";
         break;
     }
+    console.log(`Slider transform: ${slider.style.transform}`);
   });
 });
+
+// Ensure the nav menu is toggled correctly on small screens
+document.querySelector(".nav-toggle").addEventListener("click", toggleNavMenu);
