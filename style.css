@@ -50,14 +50,11 @@
     gap: 1rem; /* Space between buttons */
   }
 
-  .grid-container {
+.grid-container {
     display: grid;
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(200px, 1fr)
-    ); /* Responsive grid */
+    grid-template-columns: 1fr; /* Single column layout */
     gap: 1rem;
-  }
+}
 
   /* Animations */
   @keyframes gradientBG {
