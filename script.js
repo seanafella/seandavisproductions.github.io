@@ -9,6 +9,9 @@ themeToggle.addEventListener("click", () => {
     : '<i class="fas fa-moon"></i>';
 });
 
+document.getElementById("nav-toggle").addEventListener("click", function () {
+  document.getElementById("nav-menu").classList.toggle("active");
+});
 
 // Horizontal Slider Navigation
 document.querySelectorAll(".nav a").forEach((link) => {
