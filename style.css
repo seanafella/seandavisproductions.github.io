@@ -266,6 +266,17 @@ body {
   }
 }
 
+/* Reduce the gap between the photo and the text on phones in portrait mode */
+@media (max-width: 480px) {
+  .profile-img {
+    margin-bottom: 0.5rem; /* Reduce the bottom margin of the photo */
+  }
+
+  .hero-text {
+    margin-top: 0.5rem; /* Reduce the top margin of the text */
+  }
+}
+
 /* Animations */
 @keyframes gradientBG {
   0% {
