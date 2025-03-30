@@ -343,8 +343,8 @@ body {
 }
 
 .slide {
-  width: 70%;
-  height: 70vh;
+  width: 90%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
