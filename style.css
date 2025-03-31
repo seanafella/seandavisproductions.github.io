@@ -179,11 +179,6 @@ body {
     margin: 10px 0;
   }
 
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
   .hero-content img {
     width: 150px;
     height: 150px;
@@ -354,17 +349,16 @@ body {
 }
 
 .slide {
-  width: 90%;
+  width: 100%;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  margin-top: 5rem; /* Adjust this value to match the height of your nav bar */
+  padding: 1rem;
+  margin-top: 2rem; /* Adjust this value to match the height of your nav bar */
 }
 
 /* Adjust the content and hero-content styles to center them vertically on the page */
-.content,
 .hero-content {
   margin-top: 0; /* Remove the margin-top */
   display: flex;
@@ -380,10 +374,21 @@ body {
   border-radius: 15px;
   max-width: 80%;
   margin: 0 auto;
-  flex-wrap: wrap; /* Allows wrapping */
   gap: 2rem; /* Space between elements */
-  text-align: left; /* Align text to the left */
+  text-align: center; /* Align text to the left */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+}
+
+/* Add a media query to control flex-wrap behavior */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-wrap: wrap; /* Allow wrapping below 768px */
+  }
+}
+
+/* Ensure no wrapping above the specified screen size */
+.hero-content {
+  flex-wrap: nowrap; /* Prevent wrapping by default */
 }
 
 /* Dark mode styles for scrollable containers */
@@ -410,8 +415,7 @@ body {
 }
 
 /* Content Overlay */
-.slide .content,
-.hero-content {
+.slide .content {
   margin-top: 5rem; /* Adjust this value to match the height of your nav bar */
   background: rgba(255, 255, 255, 0.9);
   -webkit-backdrop-filter: blur(10px);
@@ -437,9 +441,9 @@ body {
 /* Profile Image */
 .profile-img {
   width: 40%;
-  max-width: 300px;
+  max-width: 200px;
   height: 40%;
-  max-height: 300px;
+  max-height: 200px;
   border-radius: 50%;
   border: 5px solid var(--secondary-color);
   margin-bottom: 1.5rem;
