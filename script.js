@@ -14,6 +14,77 @@ function toggleNavMenu() {
   navMenu.classList.toggle("active");
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const videoContainer = document.querySelector(".video-container");
+  const video = document.getElementById("profile-video");
+
+  // Play the video when the container is hovered
+  videoContainer.addEventListener("mouseenter", () => {
+    video.play();
+  });
+
+  // Pause the video when the mouse leaves the container
+  videoContainer.addEventListener("mouseleave", () => {
+    video.pause();
+  });
+
+  // Allow mobile users to toggle play/pause on tap
+  videoContainer.addEventListener("click", () => {
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const videoContainers = document.querySelectorAll(".video-container");
+
+  videoContainers.forEach((container) => {
+    const video = container.querySelector(".profile-video");
+    const photo = container.querySelector(".profile-img");
+
+    if (video) {
+      video.muted = false; // Ensure the video is not muted
+
+      // Handle video play event
+      video.addEventListener("play", () => {
+        container.classList.add("video-playing");
+      });
+
+      // Handle video end event
+      video.addEventListener("ended", () => {
+        container.classList.remove("video-playing");
+        video.currentTime = 0; // Reset video to the beginning
+      });
+
+      // Play video on hover
+      container.addEventListener("mouseenter", () => {
+        video.play();
+      });
+
+      // Pause video on mouse leave
+      container.addEventListener("mouseleave", () => {
+        video.pause();
+        video.currentTime = 0; // Reset video to the beginning
+        container.classList.remove("video-playing");
+      });
+
+      // Toggle play/pause on click for mobile users
+      container.addEventListener("click", () => {
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+          video.currentTime = 0; // Reset video to the beginning
+          container.classList.remove("video-playing");
+        }
+      });
+    }
+  });
+});
+
 // Horizontal Slider Navigation
 const navLinks = document.querySelectorAll(".nav a");
 navLinks.forEach((link) => {

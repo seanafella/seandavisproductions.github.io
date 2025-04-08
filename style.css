@@ -44,6 +44,61 @@ body {
   background-size: 400% 400%;
   color: var(--text-dark); /* Dark mode text color */
 }
+.video-container {
+  position: relative;
+  width: 200px; /* Initial size */
+  height: 200px; /* Initial size */
+  border-radius: 50%; /* Circular shape */
+  overflow: hidden; /* Ensures the video stays within the circle */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth scaling and fading */
+}
+
+.profile-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video fits within the container */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease; /* Smooth fade-in effect */
+}
+
+.video-container:hover {
+  transform: scale(1.2); /* Grows the container */
+}
+
+.video-container:hover .profile-video {
+  opacity: 1 !important; /* Ensure the video fades in on hover */
+  visibility: visible; /* Ensure visibility */
+}
+
+/* Ensure profile images and videos are visible */
+.profile-img,
+.profile-video {
+  display: block; /* Ensure the element is displayed */
+  opacity: 1; /* Ensure full visibility */
+  visibility: visible; /* Ensure the element is visible */
+}
+
+.video-container .profile-video {
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Ensure it's not visible */
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Smooth fade-in effect */
+}
+
+.video-container .profile-img {
+  opacity: 1; /* Initially visible */
+  visibility: visible; /* Ensure it's visible */
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Smooth fade-out effect */
+}
+
+.video-container.video-playing .profile-video {
+  opacity: 1; /* Show video when playing */
+  visibility: visible; /* Ensure visibility */
+}
+
+.video-container.video-playing .profile-img {
+  opacity: 0; /* Hide photo when video is playing */
+  visibility: hidden; /* Ensure it's not visible */
+}
 
 /* Navigation */
 .nav {
@@ -440,6 +495,15 @@ body {
   background: rgba(25, 25, 25, 0.9);
 }
 
+/* Ensure images inside content-box or hero-content are displayed */
+.content-box img,
+.hero-content img {
+  display: block; /* Ensure images are displayed */
+  max-width: 100%; /* Prevent overflow */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure proper fit */
+}
+
 /* Profile Image */
 .profile-img {
   width: 40%;
@@ -557,7 +621,12 @@ body {
 .form-container button:hover {
   background: #2980b9; /* Slightly darker hover effect */
 }
-
+@media (max-width: 768px) {
+  .video-container {
+    width: 150px;
+    height: 150px;
+  }
+}
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .form-container {
